@@ -4,7 +4,8 @@
   "description": "Um site para compartilhar arquivos usando senha como proteção",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon --env-file .env server.js"
+    "dev": "nodemon --env-file .env server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
