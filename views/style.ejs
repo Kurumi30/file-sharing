@@ -1,0 +1,113 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background-color: rgba(61, 38, 165, 0.555);
+  }
+
+  form {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: auto 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  div {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    grid-column: span 2;
+  }
+
+  header .title {
+    text-decoration: none;
+  }
+
+  .alert-link, .alert {
+    word-break: break-all;
+  }
+
+  .alert-success {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .card {
+    margin: 1rem auto;
+    max-width: 500px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
+
+  .card-header {
+    background-color: #54d3b7;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .file-upload {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .file-upload:hover {
+    background-color: #3b8f3e;
+  }
+
+  .form-control,
+  .btn {
+    width: 450px;
+  }
+
+  .btn-sm span {
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+  }
+
+  .btn-sm {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-sm:hover {
+    background-color: #e6e6e6;
+  }
+
+  .btn-sm svg {
+    height: 20px;
+    width: 20px;
+    fill: rgb(214, 43, 43);
+  }
+
+  @media (max-width: 500px) {
+
+    .form-control,
+    .btn {
+      width: 100%;
+    }
+
+    .alert-link {
+      font-size: 12px;
+    }
+  }
+</style>

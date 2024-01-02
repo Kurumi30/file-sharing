@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR" oncontextmenu="return false">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon"
+    href="https://freepngimg.com/thumb/anime_girl/177667-beautiful-girl-anime-render-download-free-image-thumb.png"
+    type="image/png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <title>FILE SHARING</title>
+  <%- include("style") %>
+</head>
+
+<body>
+  <% if (locals.fileLink !=null) { %>
+    <div class="alert alert-success">
+      O arquivo foi enviado com sucesso. Ficará disponível para download por 24 horas.<br>
+      <a href="<%= locals.fileLink %>" target="_blank" class="alert-link">
+        <%= locals.fileLink %>
+      </a>
+
+      <button class="btn btn-sm" onclick="copyLink()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512">
+          <path
+            d="M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H282.5C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM112 192H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+        </svg>
+        <span class="copy">COPIAR</span>
+      </button>
+    </div>
+    <% } %>
+
+      <main class="card">
+        <header class="card-header">
+          <a href="/" class="title">
+            <b>FILE SHARING</b>
+          </a>
+        </header>
+        <div class="card-body">
+          <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file" class="file-upload">Selecione o arquivo</label><br>
+            <input type="file" name="file" id="file" class="form-control" required /><br>
+
+            <label for="password">Digite a senha: (opcional)</label><br>
+            <input type="password" name="password" id="password" class="form-control" placeholder="SENHA">
+
+            <button type="submit" id="error" class="btn btn-outline-info" onclick="return validateForm()">
+              Compartilhar
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
+                  <path
+                    d="M246.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 109.3V320c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64c0 53 43 96 96 96H352c53 0 96-43 96-96V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V352z" />
+                </svg>
+              </span>
+            </button>
+          </form><br>
+
+          <blockquote class="blockquote mb-0">
+            <footer class="blockquote-footer">
+              Feito com ❤ por
+              <cite title="Dev">
+                <a href="http://github.com/Kurumi30" target="_blank">
+                  Kurumi30
+                </a>
+              </cite>
+            </footer>
+          </blockquote>
+        </div>
+      </main>
+
+      <%- include("script") %>
+</body>
+
+</html>
